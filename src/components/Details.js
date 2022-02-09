@@ -19,7 +19,7 @@ function Details() {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <button className="oo" onClick={() => navigate(-1)}>
+      <button className="oo" onClick={() => navigate("/")}>
         Go Back
       </button>
     </div>
