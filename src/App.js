@@ -6,6 +6,8 @@ import MovieList from "./components/MovieList/MovieList";
 import FilterRating from "./components/Navbar/FilterRating";
 import Navbar from "./components/Navbar/Navbar";
 import { moviesData } from "./constants/Data";
+import { Route, Routes } from "react-router-dom";
+import Details from "./components/Details";
 function App() {
   const [movies, setMovies] = useState(moviesData);
   const [text, setText] = useState("");
@@ -22,12 +24,21 @@ function App() {
       <Navbar setText={setText} />
       <FilterRating setRate={setRate} rate={rate} />
       <AddMovie handleAdd={handleAdd} />
-      <MovieList
-        movies={movies}
-        text={text}
-        rate={rate}
-        deletMovie={deletMovie}
-      />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <MovieList
+              movies={movies}
+              text={text}
+              rate={rate}
+              deletMovie={deletMovie}
+            />
+          }
+        />
+        <Route path="/Details/:id" element={<Details />} />
+      </Routes>
+
       <Footer />
     </div>
   );

@@ -82,3 +82,11 @@
 .error {
   margin-left: 350px;
 }
+.vid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.oo {
+  margin-top: 2%;
+}
